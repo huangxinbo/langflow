@@ -2,7 +2,7 @@ import useSaveFlow from "@/hooks/flows/use-save-flow";
 import { useUtilityStore } from "@/stores/utilityStore";
 import { cloneDeep } from "lodash";
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import { TagsSelector } from "../../components/common/tagsSelectorComponent";
 import EditFlowSettings from "../../components/core/editFlowSettingsComponent";
 import { Button } from "../../components/ui/button";
@@ -214,7 +214,7 @@ export default function ShareModal({
           } to the Langflow Store.`}
         >
           <span className="pr-2">Share</span>
-          <IconComponent
+          <ForwardedIconComponent
             name="Share3"
             className="-m-0.5 h-6 w-6 text-foreground"
             aria-hidden="true"
@@ -277,7 +277,7 @@ export default function ShareModal({
                     // (setOpen || internalSetOpen)(false);
                   }}
                 >
-                  <IconComponent name="Download" className="h-4 w-4" />
+                  <ForwardedIconComponent name="Download" className="h-4 w-4" />
                   Export
                 </Button>
               </ExportModal>
@@ -292,7 +292,7 @@ export default function ShareModal({
                   handleExportComponent();
                 }}
               >
-                <IconComponent name="Download" className="h-4 w-4" />
+                <ForwardedIconComponent name="Download" className="h-4 w-4" />
                 Export
               </Button>
             )}

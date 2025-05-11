@@ -3,7 +3,7 @@ import useAlertStore from "@/stores/alertStore";
 import useFlowStore from "@/stores/flowStore";
 import { useMemo, useRef, useState } from "react";
 import { cn } from "../../../../../utils/utils";
-import IconComponent from "../../../../common/genericIconComponent";
+import ForwardedIconComponent from "../../../../common/genericIconComponent";
 import { Input } from "../../../../ui/input";
 import { InputProps, TextAreaComponentType } from "../../types";
 
@@ -120,7 +120,7 @@ export default function CopyFieldAreaComponent({
         />
       )}
       <div onClick={handleCopy}>
-        <IconComponent
+        <ForwardedIconComponent
           dataTestId={`btn_copy_${id?.toLowerCase()}${editNode ? "_advanced" : ""}`}
           name={isCopied ? "Check" : "Copy"}
           className={cn(

@@ -10,7 +10,7 @@ import useFlowStore from "@/stores/flowStore";
 import { useEffect, useRef, useState } from "react";
 import AceEditor from "react-ace";
 import ReactAce from "react-ace/lib/ace";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import {
@@ -192,7 +192,7 @@ export default function CodeAreaModal({
       <BaseModal.Trigger>{children}</BaseModal.Trigger>
       <BaseModal.Header description={CODE_PROMPT_DIALOG_SUBTITLE}>
         <span className="pr-2"> {EDIT_CODE_TITLE} </span>
-        <IconComponent
+        <ForwardedIconComponent
           name="prompts"
           className="h-6 w-6 pl-1 text-primary"
           aria-hidden="true"

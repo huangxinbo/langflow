@@ -14,7 +14,7 @@ import { NoteDataType } from "@/types/flow";
 import { classNames, cn, openInNewTab } from "@/utils/utils";
 import { cloneDeep } from "lodash";
 import { memo, useCallback, useMemo } from "react";
-import IconComponent from "../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../components/common/genericIconComponent";
 import { ColorPickerButtons } from "../components/color-picker-buttons";
 import { SelectItems } from "../components/select-items";
 
@@ -144,7 +144,7 @@ const NoteToolbarComponent = memo(function NoteToolbarComponent({
                     "relative -ml-px inline-flex h-8 w-[2rem] items-center rounded-r-md bg-background text-foreground shadow-md transition-all duration-500 ease-in-out hover:bg-muted focus:z-10",
                   )}
                 >
-                  <IconComponent
+                  <ForwardedIconComponent
                     name="MoreHorizontal"
                     className="relative left-2 h-4 w-4"
                   />

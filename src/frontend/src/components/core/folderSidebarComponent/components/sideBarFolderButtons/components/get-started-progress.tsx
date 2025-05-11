@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import { Button } from "@/components/ui/button";
 import { DISCORD_URL, GITHUB_URL } from "@/constants/constants";
 import { useGetUserData, useUpdateUser } from "@/controllers/API/queries/auth";
@@ -101,7 +101,7 @@ export const GetStartedProgress: FC<{
           className="text-muted-foreground hover:text-foreground"
           data-testid="close_get_started_dialog"
         >
-          <IconComponent name="X" className="h-4 w-4" />
+          <ForwardedIconComponent name="X" className="h-4 w-4" />
         </button>
       </div>
 
@@ -144,7 +144,7 @@ export const GetStartedProgress: FC<{
           >
             {isGithubStarredChild ? (
               <span data-testid="github_starred_icon_get_started">
-                <IconComponent
+                <ForwardedIconComponent
                   name="Check"
                   className="h-4 w-4 text-accent-emerald-foreground"
                 />
@@ -186,7 +186,7 @@ export const GetStartedProgress: FC<{
           >
             {isDiscordJoinedChild ? (
               <span data-testid="discord_joined_icon_get_started">
-                <IconComponent
+                <ForwardedIconComponent
                   name="Check"
                   className="h-4 w-4 text-accent-emerald-foreground"
                 />
@@ -218,7 +218,7 @@ export const GetStartedProgress: FC<{
             data-testid="create_flow_btn_get_started"
           >
             <span data-testid="create_flow_icon_get_started">
-              <IconComponent
+              <ForwardedIconComponent
                 name={hasFlows ? "Check" : "Plus"}
                 className={cn(
                   "h-4 w-4 text-primary",

@@ -1,9 +1,7 @@
-"use client";
-
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import * as React from "react";
 import { cn } from "../../utils/utils";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 
 const Select = SelectPrimitive.Root;
 
@@ -28,9 +26,9 @@ const SelectTrigger = React.forwardRef<
     {children}
     <SelectPrimitive.Icon asChild>
       {direction === "up" ? (
-        <ChevronUp className="h-4 w-4" />
+        <ForwardedIconComponent name="ChevronUp" className="h-4 w-4" />
       ) : (
-        <ChevronDown className="h-4 w-4" />
+        <ForwardedIconComponent name="ChevronDown" className="h-4 w-4" />
       )}
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
@@ -93,7 +91,7 @@ const SelectItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <ForwardedIconComponent name="Check" className="h-4 w-4" />
       </SelectPrimitive.ItemIndicator>
     </span>
 

@@ -1,5 +1,4 @@
 import { DialogClose } from "@radix-ui/react-dialog";
-import { Trash2 } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import {
   Dialog,
@@ -9,6 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../../components/ui/dialog";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 
 export default function DeleteConfirmationModal({
   children,
@@ -37,7 +37,8 @@ export default function DeleteConfirmationModal({
           <DialogTitle>
             <div className="flex items-center">
               <span className="pr-2">Delete</span>
-              <Trash2
+              <ForwardedIconComponent
+                name="Trash2"
                 className="h-6 w-6 pl-1 text-foreground"
                 strokeWidth={1.5}
               />

@@ -12,7 +12,7 @@ import { APIClassType } from "@/types/api";
 import { useUpdateNodeInternals } from "@xyflow/react";
 import _, { cloneDeep } from "lodash";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import IconComponent from "../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../components/common/genericIconComponent";
 import {
   Select,
   SelectContentWithoutPortal,
@@ -512,7 +512,7 @@ const NodeToolbarComponent = memo(
                 size="node-toolbar"
                 data-testid="tool-mode-button"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="Hammer"
                   className={cn(
                     "h-4 w-4 transition-all",
@@ -572,7 +572,7 @@ const NodeToolbarComponent = memo(
                       size="node-toolbar"
                       asChild
                     >
-                      <IconComponent
+                      <ForwardedIconComponent
                         name="MoreHorizontal"
                         className="h-4 w-4"
                       />
@@ -713,7 +713,7 @@ const NodeToolbarComponent = memo(
                 </SelectItem>
                 <SelectItem value={"delete"} className="focus:bg-red-400/[.20]">
                   <div className="font-red flex text-status-red">
-                    <IconComponent
+                    <ForwardedIconComponent
                       name="Trash2"
                       className="relative top-0.5 mr-2 h-4 w-4"
                     />{" "}
@@ -721,10 +721,10 @@ const NodeToolbarComponent = memo(
                     <span
                       className={`absolute right-2 top-2 flex items-center justify-center rounded-sm px-1 py-[0.2]`}
                     >
-                      <IconComponent
+                      <ForwardedIconComponent
                         name="Delete"
                         className="h-4 w-4 stroke-2 text-red-400"
-                      ></IconComponent>
+                      />
                     </span>
                   </div>
                 </SelectItem>

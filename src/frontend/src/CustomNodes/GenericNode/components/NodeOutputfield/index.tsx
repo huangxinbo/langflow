@@ -14,9 +14,7 @@ import {
   useState,
 } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
-import ForwardedIconComponent, {
-  default as IconComponent,
-} from "../../../../components/common/genericIconComponent";
+import ForwardedIconComponent  from "../../../../components/common/genericIconComponent";
 import ShadTooltip from "../../../../components/common/shadTooltipComponent";
 import { Button } from "../../../../components/ui/button";
 import useFlowStore from "../../../../stores/flowStore";
@@ -41,7 +39,7 @@ import OutputModal from "../outputModal";
 // Memoize IconComponent instances
 const EyeIcon = memo(
   ({ hidden, className }: { hidden: boolean; className: string }) => (
-    <IconComponent
+    <ForwardedIconComponent
       className={className}
       strokeWidth={ICON_STROKE_WIDTH}
       name={hidden ? "EyeOff" : "Eye"}
@@ -50,7 +48,7 @@ const EyeIcon = memo(
 );
 
 const SnowflakeIcon = memo(() => (
-  <IconComponent className="h-5 w-5 text-ice" name="Snowflake" />
+  <ForwardedIconComponent className="h-5 w-5 text-ice" name="Snowflake" />
 ));
 
 // Memoize Button components
@@ -129,7 +127,7 @@ const InspectButton = memo(
         unstyled
         onClick={onClick}
       >
-        <IconComponent
+        <ForwardedIconComponent
           name="TextSearchIcon"
           strokeWidth={ICON_STROKE_WIDTH}
           className={cn(

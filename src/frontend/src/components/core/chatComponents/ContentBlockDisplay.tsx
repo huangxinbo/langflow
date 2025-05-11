@@ -1,9 +1,7 @@
-"use client";
 import { BorderTrail } from "@/components/core/border-trail";
 import { ContentBlock } from "@/types/chat";
 import { cn } from "@/utils/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import rehypeMathjax from "rehype-mathjax";
@@ -116,7 +114,7 @@ export function ContentBlockDisplay({
               animate={{ rotate: isExpanded ? 180 : 0 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
-              <ChevronDown className="h-5 w-5" />
+              <ForwardedIconComponent name="ChevronDown" className="h-5 w-5" />
             </motion.div>
           </div>
         </div>

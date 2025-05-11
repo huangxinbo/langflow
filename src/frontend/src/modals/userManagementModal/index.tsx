@@ -1,6 +1,5 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import * as Form from "@radix-ui/react-form";
-import { Eye, EyeOff } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import { Button } from "../../components/ui/button";
 import { Checkbox } from "../../components/ui/checkbox";
@@ -71,7 +70,7 @@ export default function UserManagementModal({
       <BaseModal.Trigger asChild={asChild}>{children}</BaseModal.Trigger>
       <BaseModal.Header description={titleHeader}>
         <span className="pr-2">{title}</span>
-        <IconComponent
+        <ForwardedIconComponent
           name={icon}
           className="h-6 w-6 pl-1 text-foreground"
           aria-hidden="true"
@@ -140,14 +139,16 @@ export default function UserManagementModal({
                         *
                       </span>
                       {pwdVisible && (
-                        <Eye
+                        <ForwardedIconComponent
+                          name="Eye"
                           onClick={() => setPwdVisible(!pwdVisible)}
                           className="h-5 cursor-pointer"
                           strokeWidth={1.5}
                         />
                       )}
                       {!pwdVisible && (
-                        <EyeOff
+                        <ForwardedIconComponent
+                          name="EyeOff"
                           onClick={() => setPwdVisible(!pwdVisible)}
                           className="h-5 cursor-pointer"
                           strokeWidth={1.5}
@@ -198,7 +199,8 @@ export default function UserManagementModal({
                         *
                       </span>
                       {confirmPwdVisible && (
-                        <Eye
+                        <ForwardedIconComponent
+                          name="Eye"
                           onClick={() =>
                             setConfirmPwdVisible(!confirmPwdVisible)
                           }
@@ -207,7 +209,8 @@ export default function UserManagementModal({
                         />
                       )}
                       {!confirmPwdVisible && (
-                        <EyeOff
+                        <ForwardedIconComponent
+                          name="EyeOff"
                           onClick={() =>
                             setConfirmPwdVisible(!confirmPwdVisible)
                           }

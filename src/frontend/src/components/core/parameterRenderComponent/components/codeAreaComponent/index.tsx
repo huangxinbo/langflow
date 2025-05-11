@@ -1,7 +1,7 @@
 import { GRADIENT_CLASS } from "@/constants/constants";
 import CodeAreaModal from "@/modals/codeAreaModal";
 import { cn } from "../../../../../utils/utils";
-import IconComponent from "../../../../common/genericIconComponent";
+import ForwardedIconComponent from "../../../../common/genericIconComponent";
 import { Button } from "../../../../ui/button";
 import { getPlaceholder } from "../../helpers/get-placeholder-disabled";
 import { InputProps } from "../../types";
@@ -92,7 +92,7 @@ export default function CodeAreaComponent({
         )}
         aria-hidden="true"
       />
-      <IconComponent
+      <ForwardedIconComponent
         name={disabled ? "lock" : "Scan"}
         className={cn(
           externalLinkIconClasses.icon,

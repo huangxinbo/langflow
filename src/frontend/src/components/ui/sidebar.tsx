@@ -2,7 +2,6 @@
 
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
-import { PanelLeft } from "lucide-react";
 import * as React from "react";
 
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -16,6 +15,8 @@ import { Input } from "./input";
 import { Separator } from "./separator";
 import { Skeleton } from "./skeleton";
 import { TooltipProvider } from "./tooltip";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
+
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -292,7 +293,7 @@ const SidebarTrigger = React.forwardRef<
         props.children
       ) : (
         <>
-          <PanelLeft />
+          <ForwardedIconComponent name="PanelLeft" />
           <span className="sr-only">Toggle Sidebar</span>
         </>
       )}

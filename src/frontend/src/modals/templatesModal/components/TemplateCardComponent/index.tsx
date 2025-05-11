@@ -1,9 +1,7 @@
 import { convertTestName } from "@/components/common/storeCardComponent/utils/convert-test-name";
 import { swatchColors } from "@/utils/styleUtils";
 import { cn, getNumberFromString } from "@/utils/utils";
-import IconComponent, {
-  ForwardedIconComponent,
-} from "../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../components/common/genericIconComponent";
 import { TemplateCardComponentProps } from "../../../../types/templates/types";
 
 export default function TemplateCardComponent({
@@ -37,7 +35,7 @@ export default function TemplateCardComponent({
           swatchColors[swatchIndex],
         )}
       >
-        <IconComponent
+        <ForwardedIconComponent
           name={example.icon || "FileText"}
           className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 duration-300 group-hover:scale-105 group-focus-visible:scale-105"
         />

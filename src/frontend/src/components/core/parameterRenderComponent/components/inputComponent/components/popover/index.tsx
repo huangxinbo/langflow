@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/utils/utils";
 import { PopoverAnchor } from "@radix-ui/react-popover";
-import { X } from "lucide-react";
 import { ReactNode, useMemo, useState } from "react";
 
 const OptionBadge = ({
@@ -62,7 +61,7 @@ const OptionBadge = ({
         onRemove(e as unknown as React.MouseEvent<HTMLButtonElement>)
       }
     >
-      <X className="h-3 w-3 cursor-pointer bg-transparent hover:text-destructive" />
+      <ForwardedIconComponent name="X" className="h-3 w-3 cursor-pointer bg-transparent hover:text-destructive" />
     </div>
   </Badge>
 );

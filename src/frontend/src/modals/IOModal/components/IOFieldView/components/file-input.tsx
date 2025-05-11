@@ -5,7 +5,7 @@ import { createFileUpload } from "@/helpers/create-file-upload";
 import useFileSizeValidator from "@/shared/hooks/use-file-size-validator";
 import useAlertStore from "@/stores/alertStore";
 import { useEffect, useState } from "react";
-import IconComponent from "../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../components/common/genericIconComponent";
 import {
   ALLOWED_IMAGE_INPUT_EXTENSIONS,
   BASE_URL_API,
@@ -149,7 +149,7 @@ export default function IOFileInput({ field, updateValue }: IOFileInputProps) {
 
         {isDragging ? (
           <>
-            <IconComponent name="ArrowUpToLine" className="h-5 w-5 stroke-1" />
+            <ForwardedIconComponent name="ArrowUpToLine" className="h-5 w-5 stroke-1" />
             "Drop your file here"
           </>
         ) : image ? (
@@ -159,7 +159,7 @@ export default function IOFileInput({ field, updateValue }: IOFileInputProps) {
           />
         ) : (
           <>
-            <IconComponent name="SunIcon" className="h-8 w-8 stroke-1" />
+            <ForwardedIconComponent name="SunIcon" className="h-8 w-8 stroke-1" />
           </>
         )}
       </div>

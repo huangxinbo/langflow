@@ -1,7 +1,7 @@
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import { useVoiceStore } from "@/stores/voiceStore";
-import IconComponent from "../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../components/common/genericIconComponent";
 import { SidebarOpenViewProps } from "../types/sidebar-open-view";
 import SessionSelector from "./IOFieldView/components/session-selector";
 
@@ -24,7 +24,7 @@ export const SidebarOpenView = ({
         <div className="flex flex-col gap-2 pb-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <IconComponent
+              <ForwardedIconComponent
                 name="MessagesSquare"
                 className="h-[18px] w-[18px] text-ring"
               />
@@ -42,7 +42,7 @@ export const SidebarOpenView = ({
                     setNewSessionCloseVoiceAssistant(true);
                   }}
                 >
-                  <IconComponent
+                  <ForwardedIconComponent
                     name="Plus"
                     className="h-[18px] w-[18px] text-ring"
                   />

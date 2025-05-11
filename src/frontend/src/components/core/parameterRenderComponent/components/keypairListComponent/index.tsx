@@ -8,7 +8,7 @@ import {
 import { cn } from "@/utils/utils";
 import { cloneDeep } from "lodash";
 import { useEffect, useState } from "react";
-import IconComponent from "../../../../common/genericIconComponent";
+import ForwardedIconComponent from "../../../../common/genericIconComponent";
 
 const KeypairListComponent = ({
   value,
@@ -105,7 +105,7 @@ const KeypairListComponent = ({
           isFirstItem ? "bg-background hover:bg-muted" : "hover:bg-smooth-red",
         )}
       >
-        <IconComponent
+        <ForwardedIconComponent
           name={iconName}
           className={cn(
             "icon-size justify-self-center text-muted-foreground",

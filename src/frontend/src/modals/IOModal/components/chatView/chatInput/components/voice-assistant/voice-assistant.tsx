@@ -15,7 +15,7 @@ import { useUtilityStore } from "@/stores/utilityStore";
 import { useVoiceStore } from "@/stores/voiceStore";
 import { cn } from "@/utils/utils";
 import { useEffect, useMemo, useRef, useState } from "react";
-import IconComponent from "../../../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../../../components/common/genericIconComponent";
 import SettingsVoiceModal from "./components/audio-settings/audio-settings-dialog";
 import { checkProvider } from "./helpers/check-provider";
 import { formatTime } from "./helpers/format-time";
@@ -396,7 +396,7 @@ export function VoiceAssistant({
             delayDuration={500}
           >
             <Button unstyled onClick={handleToggleRecording}>
-              <IconComponent
+              <ForwardedIconComponent
                 name={isRecording ? "Mic" : "MicOff"}
                 strokeWidth={ICON_STROKE_WIDTH}
                 className="h-4 w-4 text-placeholder-foreground"
@@ -442,7 +442,7 @@ export function VoiceAssistant({
               {hasOpenAIAPIKey ? (
                 <>
                   <Button data-testid="voice-assistant-settings-icon" unstyled>
-                    <IconComponent
+                    <ForwardedIconComponent
                       name="Settings"
                       strokeWidth={ICON_STROKE_WIDTH}
                       className={cn(
@@ -459,7 +459,7 @@ export function VoiceAssistant({
                     data-testid="voice-assistant-settings-icon-without-openai"
                     className="h-8 w-8"
                   >
-                    <IconComponent
+                    <ForwardedIconComponent
                       name="Key"
                       strokeWidth={ICON_STROKE_WIDTH}
                       className={cn("h-4 w-4 text-accent-amber-foreground")}
@@ -475,7 +475,7 @@ export function VoiceAssistant({
             onClick={handleCloseAudioInput}
             data-testid="voice-assistant-close-button"
           >
-            <IconComponent
+            <ForwardedIconComponent
               name="X"
               strokeWidth={ICON_STROKE_WIDTH}
               className="h-4 w-4 text-muted-foreground hover:text-foreground"

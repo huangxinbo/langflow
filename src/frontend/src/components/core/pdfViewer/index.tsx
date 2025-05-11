@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import IconComponent from "../../common/genericIconComponent";
+import ForwardedIconComponent from "../../common/genericIconComponent";
 import Loading from "../../ui/loading";
 import Error from "./Error";
 import NoDataPdf from "./noData";
@@ -116,10 +116,10 @@ export default function PdfViewer({ pdf }: { pdf: string }): JSX.Element {
             disabled={pageNumber <= 1}
             onClick={previousPage}
           >
-            <IconComponent
+            <ForwardedIconComponent
               name={"ChevronLeft"}
               className="h-6 w-6"
-            ></IconComponent>
+            />
           </button>
           <p>
             {pageNumber || (numPages ? 1 : "--")}/{numPages || "--"}
@@ -129,14 +129,14 @@ export default function PdfViewer({ pdf }: { pdf: string }): JSX.Element {
             disabled={pageNumber >= numPages}
             onClick={nextPage}
           >
-            <IconComponent
+            <ForwardedIconComponent
               name={"ChevronRight"}
               className="h-6 w-6"
-            ></IconComponent>
+            />
           </button>
           <p className="px-2">|</p>
           <button type="button" onClick={zoomOut}>
-            <IconComponent name={"ZoomOut"} className="h-6 w-6"></IconComponent>
+            <ForwardedIconComponent name={"ZoomOut"} className="h-6 w-6" />
           </button>
           <input
             type="number"
@@ -146,7 +146,7 @@ export default function PdfViewer({ pdf }: { pdf: string }): JSX.Element {
             value={scale}
           />
           <button type="button" onClick={zoomIn}>
-            <IconComponent name={"ZoomIn"} className="h-6 w-6"></IconComponent>
+            <ForwardedIconComponent name={"ZoomIn"} className="h-6 w-6" />
           </button>
         </div>
       </div>

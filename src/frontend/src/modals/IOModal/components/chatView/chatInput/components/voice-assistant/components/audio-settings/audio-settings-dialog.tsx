@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import InputComponent from "@/components/core/parameterRenderComponent/components/inputComponent";
 import { getPlaceholder } from "@/components/core/parameterRenderComponent/helpers/get-placeholder-disabled";
@@ -251,7 +251,7 @@ const SettingsVoiceModal = ({
                     <span className="ml-1 text-destructive">*</span>
                     <ShadTooltip content="OpenAI API key is required to use the voice assistant.">
                       <div>
-                        <IconComponent
+                        <ForwardedIconComponent
                           name="Info"
                           strokeWidth={2}
                           className="relative -top-[3px] left-1 h-[14px] w-[14px] text-placeholder"
@@ -340,7 +340,7 @@ const SettingsVoiceModal = ({
                         ElevenLabs API Key
                         <ShadTooltip content="If you have an ElevenLabs API key, you can select ElevenLabs voices.">
                           <div>
-                            <IconComponent
+                            <ForwardedIconComponent
                               name="Info"
                               strokeWidth={2}
                               className="relative -top-[3px] left-1 h-[14px] w-[14px] text-placeholder"

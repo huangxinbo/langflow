@@ -25,6 +25,7 @@ import useFetchDataOnMount from "../../../hooks/use-fetch-data-on-mount";
 import useHandleOnNewValue from "../../../hooks/use-handle-new-value";
 import NodeInputInfo from "../NodeInputInfo";
 import HandleRenderComponent from "../handleRenderComponent";
+import ForwardedIconComponent  from "../../../../components/common/genericIconComponent";
 
 export default function NodeInputField({
   id,
@@ -184,7 +185,7 @@ export default function NodeInputField({
                 <ShadTooltip content={<NodeInputInfo info={info} />}>
                   {/* put div to avoid bug that does not display tooltip */}
                   <div className="cursor-help">
-                    <IconComponent
+                    <ForwardedIconComponent
                       name="Info"
                       strokeWidth={ICON_STROKE_WIDTH}
                       className="relative ml-1 h-3 w-3 text-placeholder"

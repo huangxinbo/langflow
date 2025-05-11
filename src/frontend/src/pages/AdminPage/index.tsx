@@ -8,7 +8,7 @@ import {
 import CustomLoader from "@/customization/components/custom-loader";
 import { cloneDeep } from "lodash";
 import { useContext, useEffect, useRef, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import ShadTooltip from "../../components/common/shadTooltipComponent";
 import { Button } from "../../components/ui/button";
 import { CheckBoxDiv } from "../../components/ui/checkbox";
@@ -252,7 +252,7 @@ export default function AdminPage() {
         <div className="admin-page-panel flex h-full flex-col pb-8">
           <div className="main-page-nav-arrangement">
             <span className="main-page-nav-title">
-              <IconComponent name="Shield" className="w-6" />
+              <ForwardedIconComponent name="Shield" className="w-6" />
               {ADMIN_HEADER_TITLE}
             </span>
           </div>
@@ -274,11 +274,11 @@ export default function AdminPage() {
                     setFilterUserList(userList.current);
                   }}
                 >
-                  <IconComponent name="X" className="w-6 text-foreground" />
+                  <ForwardedIconComponent name="X" className="w-6 text-foreground" />
                 </div>
               ) : (
                 <div>
-                  <IconComponent
+                  <ForwardedIconComponent
                     name="Search"
                     className="w-6 text-foreground"
                   />
@@ -444,7 +444,7 @@ export default function AdminPage() {
                                 }}
                               >
                                 <ShadTooltip content="Edit" side="top">
-                                  <IconComponent
+                                  <ForwardedIconComponent
                                     name="Pencil"
                                     className="h-4 w-4 cursor-pointer"
                                   />
@@ -472,7 +472,7 @@ export default function AdminPage() {
                                   </span>
                                 </ConfirmationModal.Content>
                                 <ConfirmationModal.Trigger>
-                                  <IconComponent
+                                  <ForwardedIconComponent
                                     name="Trash2"
                                     className="ml-2 h-4 w-4 cursor-pointer"
                                   />

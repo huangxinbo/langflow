@@ -14,9 +14,7 @@ import {
 } from "../../../../../constants/alerts_constants";
 import useAlertStore from "../../../../../stores/alertStore";
 import useFlowsManagerStore from "../../../../../stores/flowsManagerStore";
-import IconComponent, {
-  ForwardedIconComponent,
-} from "../../../../common/genericIconComponent";
+import ForwardedIconComponent from "../../../../common/genericIconComponent";
 import { Button } from "../../../../ui/button";
 import { FileComponentType, InputProps } from "../../types";
 
@@ -308,7 +306,7 @@ export default function InputFileComponent({
                   size="icon"
                   data-testid="button_upload_file"
                 >
-                  <IconComponent
+                  <ForwardedIconComponent
                     name={value ? "CircleCheckBig" : "Upload"}
                     className={cn(
                       value && "text-background",

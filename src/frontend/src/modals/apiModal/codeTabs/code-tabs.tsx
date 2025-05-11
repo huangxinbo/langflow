@@ -1,5 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
-import ShadTooltip from "@/components/common/shadTooltipComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useAuthStore from "@/stores/authStore";
@@ -111,7 +110,7 @@ export default function APITabsComponent() {
                 value={index.toString()}
                 className="flex items-center gap-2.5 rounded-md !border-0 px-4 py-2 !text-sm data-[state=active]:bg-background"
               >
-                <IconComponent name={tab.icon} className="h-4 w-4" />
+                <ForwardedIconComponent name={tab.icon} className="h-4 w-4" />
                 {tab.title}
               </TabsTrigger>
             ))}
@@ -136,12 +135,12 @@ export default function APITabsComponent() {
               className="!hover:bg-foreground group absolute right-2 top-2"
             >
               {isCopied ? (
-                <IconComponent
+                <ForwardedIconComponent
                   name="Check"
                   className="h-5 w-5 text-muted-foreground"
                 />
               ) : (
-                <IconComponent
+                <ForwardedIconComponent
                   name="Copy"
                   className="!h-5 !w-5 text-muted-foreground"
                 />

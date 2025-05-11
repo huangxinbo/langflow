@@ -17,7 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../ui/card";
-import IconComponent from "../genericIconComponent";
+import ForwardedIconComponent from "../genericIconComponent";
 import ShadTooltip from "../shadTooltipComponent";
 import useDataEffect from "./hooks/use-data-effect";
 import useInstallComponent from "./hooks/use-handle-install";
@@ -118,7 +118,7 @@ export default function StoreCardComponent({
           <CardHeader>
             <div>
               <CardTitle className="flex w-full items-start justify-between gap-3 text-xl">
-                <IconComponent
+                <ForwardedIconComponent
                   className={cn(
                     "visible flex-shrink-0",
                     data.is_component
@@ -135,14 +135,14 @@ export default function StoreCardComponent({
                   {data.private && (
                     <ShadTooltip content="Private">
                       <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <IconComponent name="Lock" className="h-4 w-4" />
+                        <ForwardedIconComponent name="Lock" className="h-4 w-4" />
                       </span>
                     </ShadTooltip>
                   )}
                   {!data.is_component && (
                     <ShadTooltip content="Components">
                       <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <IconComponent name="ToyBrick" className="h-4 w-4" />
+                        <ForwardedIconComponent name="ToyBrick" className="h-4 w-4" />
                         <span data-testid={`total-${data.name}`}>
                           {data?.metadata?.total ?? 0}
                         </span>
@@ -151,7 +151,7 @@ export default function StoreCardComponent({
                   )}
                   <ShadTooltip content="Likes">
                     <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                      <IconComponent name="Heart" className={cn("h-4 w-4")} />
+                      <ForwardedIconComponent name="Heart" className={cn("h-4 w-4")} />
                       <span data-testid={`likes-${data.name}`}>
                         {likesCount ?? 0}
                       </span>
@@ -159,7 +159,7 @@ export default function StoreCardComponent({
                   </ShadTooltip>
                   <ShadTooltip content="Downloads">
                     <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                      <IconComponent name="DownloadCloud" className="h-4 w-4" />
+                      <ForwardedIconComponent name="DownloadCloud" className="h-4 w-4" />
                       <span data-testid={`downloads-${data.name}`}>
                         {downloadsCount ?? 0}
                       </span>
@@ -216,7 +216,7 @@ export default function StoreCardComponent({
                     }}
                     data-testid={`like-${data.name}`}
                   >
-                    <IconComponent
+                    <ForwardedIconComponent
                       name="Heart"
                       className={cn(
                         "h-5 w-5",
@@ -252,7 +252,7 @@ export default function StoreCardComponent({
                     }}
                     data-testid={`install-${data.name}`}
                   >
-                    <IconComponent
+                    <ForwardedIconComponent
                       name={loading ? "Loader2" : "Plus"}
                       className={cn(
                         loading ? "h-5 w-5 animate-spin" : "h-5 w-5",

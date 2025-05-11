@@ -1,5 +1,5 @@
 import { ALL_LANGUAGES } from "@/constants/constants";
-import IconComponent from "../../../../../../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../../../../../../components/common/genericIconComponent";
 import ShadTooltip from "../../../../../../../../../../components/common/shadTooltipComponent";
 import {
   Select,
@@ -25,7 +25,7 @@ const LanguageSelect = ({
         Preferred Language
         <ShadTooltip content="Select the language for speech recognition">
           <div>
-            <IconComponent
+            <ForwardedIconComponent
               name="Info"
               strokeWidth={2}
               className="relative -top-[3px] left-1 h-[14px] w-[14px] text-placeholder"

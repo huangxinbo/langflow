@@ -20,10 +20,9 @@ import { VertexBuildTypeAPI } from "@/types/api";
 import { NodeDataType } from "@/types/flow";
 import { findLastNode } from "@/utils/reactflowUtils";
 import { classNames, cn } from "@/utils/utils";
-import { Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
-import IconComponent from "../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../components/common/genericIconComponent";
 import BuildStatusDisplay from "./components/build-status-display";
 import { normalizeTimeString } from "./utils/format-run-time";
 
@@ -372,7 +371,7 @@ export default function NodeStatus({
             <div className="cursor-help">
               {conditionSuccess && validationStatus?.data?.duration ? (
                 <div className="font-jetbrains mr-1 flex gap-1 rounded-sm bg-accent-emerald px-1 text-xxs font-bold text-accent-emerald-foreground">
-                  <Check className="h-4 w-4 items-center self-center" />
+                  <ForwardedIconComponent name="Check" className="h-4 w-4 items-center self-center" />
                   <span>
                     {normalizeTimeString(validationStatus?.data?.duration)}
                   </span>
@@ -410,7 +409,7 @@ export default function NodeStatus({
                   data-testid={getDataTestId()}
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <IconComponent
+                    <ForwardedIconComponent
                       name={
                         isPolling
                           ? "Loader2"
@@ -427,7 +426,7 @@ export default function NodeStatus({
                     />
                   </div>
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <IconComponent
+                    <ForwardedIconComponent
                       name={"Unlink"}
                       className={cn(
                         "h-3 w-3 text-accent-amber-foreground opacity-0 transition-opacity",
@@ -454,7 +453,7 @@ export default function NodeStatus({
             {showNode && (
               <Button unstyled className="nodrag group">
                 <div data-testid={`button_run_` + display_name.toLowerCase()}>
-                  <IconComponent
+                  <ForwardedIconComponent
                     name={iconName}
                     className={iconClasses}
                     strokeWidth={ICON_STROKE_WIDTH}
@@ -483,7 +482,7 @@ export default function NodeStatus({
                   <div
                     data-testid={`button_update_` + display_name.toLowerCase()}
                   >
-                    <IconComponent
+                    <ForwardedIconComponent
                       name={"AlertTriangle"}
                       strokeWidth={ICON_STROKE_WIDTH}
                       className="icon-size text-black"

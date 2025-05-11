@@ -5,7 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { useDarkStore } from "../../../stores/darkStore";
 import { codeTabsPropsType } from "../../../types/components";
-import IconComponent from "../../common/genericIconComponent";
+import ForwardedIconComponent from "../../common/genericIconComponent";
 import { Button } from "../../ui/button";
 import { Label } from "../../ui/label";
 import { Switch } from "../../ui/switch";
@@ -98,7 +98,7 @@ export default function CodeTabsComponent({
                           >
                             Enable Tweaks
                           </Label>
-                          <IconComponent
+                          <ForwardedIconComponent
                             name="info"
                             className="h-3.5 w-3.5 text-placeholder-foreground"
                           />
@@ -126,12 +126,12 @@ export default function CodeTabsComponent({
                       data-testid="btn-copy-code"
                     >
                       {isCopied ? (
-                        <IconComponent
+                        <ForwardedIconComponent
                           name="Check"
                           className="h-4 w-4 text-muted-foreground"
                         />
                       ) : (
-                        <IconComponent
+                        <ForwardedIconComponent
                           name="Copy"
                           className="h-4 w-4 text-muted-foreground"
                         />

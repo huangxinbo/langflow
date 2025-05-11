@@ -1,6 +1,4 @@
-import IconComponent, {
-  ForwardedIconComponent,
-} from "../../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../../components/common/genericIconComponent";
 import { Skeleton } from "../../../../../../components/ui/skeleton";
 import formatFileName from "../utils/format-file-name";
 
@@ -87,7 +85,7 @@ export default function FilePreview({
               className="group flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-muted p-2 transition-all hover:bg-input"
               onClick={onDelete}
             >
-              <IconComponent
+              <ForwardedIconComponent
                 name="X"
                 className="h-4 w-4 stroke-muted-foreground stroke-2 group-hover:stroke-primary"
               />

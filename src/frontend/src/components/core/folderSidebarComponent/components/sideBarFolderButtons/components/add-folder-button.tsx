@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +21,7 @@ export const AddFolderButton = ({
       disabled={disabled}
       loading={loading}
     >
-      <IconComponent name="Plus" className="h-4 w-4" />
+      <ForwardedIconComponent name="Plus" className="h-4 w-4" />
     </Button>
   </ShadTooltip>
 );

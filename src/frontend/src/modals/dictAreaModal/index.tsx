@@ -1,7 +1,7 @@
 import useAlertStore from "@/stores/alertStore";
 import { useEffect, useRef, useState } from "react";
 import { JsonEditor as VanillaJsonEditor } from "vanilla-jsoneditor";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import JsonEditor from "../../components/core/jsonEditor";
 import BaseModal from "../baseModal";
 
@@ -93,7 +93,7 @@ export default function DictAreaModal({
       <span className="pr-2">
         {onChange ? "Edit Dictionary" : "View Dictionary"}
       </span>
-      <IconComponent
+      <ForwardedIconComponent
         name="BookMarked"
         className="h-6 w-6 pl-1 text-primary"
         aria-hidden="true"

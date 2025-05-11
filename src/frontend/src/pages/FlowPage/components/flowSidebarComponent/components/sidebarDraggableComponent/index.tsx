@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import useDeleteFlow from "@/hooks/flows/use-delete-flow";
 import { useAddComponent } from "@/hooks/use-add-component";
 import { DragEventHandler, forwardRef, useRef, useState } from "react";
-import IconComponent, {
-  ForwardedIconComponent,
-} from "../../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../../components/common/genericIconComponent";
 import ShadTooltip from "../../../../../../components/common/shadTooltipComponent";
 import {
   Select,
@@ -216,7 +214,7 @@ export const SidebarDraggableComponent = forwardRef(
                   >
                     <SelectItem value={"download"}>
                       <div className="flex">
-                        <IconComponent
+                        <ForwardedIconComponent
                           name="Download"
                           className="relative top-0.5 mr-2 h-4 w-4"
                         />{" "}
@@ -226,7 +224,7 @@ export const SidebarDraggableComponent = forwardRef(
                     {!official && (
                       <SelectItem value={"delete"}>
                         <div className="flex">
-                          <IconComponent
+                          <ForwardedIconComponent
                             name="Trash2"
                             className="relative top-0.5 mr-2 h-4 w-4"
                           />{" "}

@@ -1,6 +1,6 @@
 import BaseModal from "../../../modals/baseModal";
 import { fetchErrorComponentType } from "../../../types/components";
-import IconComponent from "../genericIconComponent";
+import ForwardedIconComponent from "../genericIconComponent";
 
 export default function FetchErrorComponent({
   message,
@@ -21,7 +21,7 @@ export default function FetchErrorComponent({
       >
         <BaseModal.Content>
           <div role="status" className="m-auto flex flex-col items-center">
-            <IconComponent
+            <ForwardedIconComponent
               className={`h-16 w-16`}
               name="Unplug"
             />

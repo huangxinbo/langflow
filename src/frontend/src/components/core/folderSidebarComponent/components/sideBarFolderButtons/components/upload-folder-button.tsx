@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +12,7 @@ export const UploadFolderButton = ({ onClick, disabled }) => (
       data-testid="upload-project-button"
       disabled={disabled}
     >
-      <IconComponent name="Upload" className="h-4 w-4" />
+      <ForwardedIconComponent name="Upload" className="h-4 w-4" />
     </Button>
   </ShadTooltip>
 );

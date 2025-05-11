@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Input } from "@/components/ui/input";
 import {
@@ -152,14 +152,14 @@ export default function SessionSelector({
                 onClick={handleCancel}
                 className="hover:text-status-red-hover ml-2 text-status-red"
               >
-                <IconComponent name="X" className="h-4 w-4" />
+                <ForwardedIconComponent name="X" className="h-4 w-4" />
               </button>
               <button
                 onClick={handleConfirm}
                 data-confirm="true"
                 className="ml-2 text-green-500 hover:text-green-600"
               >
-                <IconComponent name="Check" className="h-4 w-4" />
+                <ForwardedIconComponent name="Check" className="h-4 w-4" />
               </button>
             </div>
           ) : (
@@ -192,7 +192,7 @@ export default function SessionSelector({
                 isVisible ? "visible" : "invisible group-hover:visible",
               )}
             >
-              <IconComponent name="MoreHorizontal" className="h-4 w-4" />
+              <ForwardedIconComponent name="MoreHorizontal" className="h-4 w-4" />
             </SelectTrigger>
           </ShadTooltip>
           <SelectContent side="right" align="start" className="p-0">
@@ -201,7 +201,7 @@ export default function SessionSelector({
               className="cursor-pointer px-3 py-2 focus:bg-muted"
             >
               <div className="flex items-center">
-                <IconComponent name="SquarePen" className="mr-2 h-4 w-4" />
+                <ForwardedIconComponent name="SquarePen" className="mr-2 h-4 w-4" />
                 Rename
               </div>
             </SelectItem>
@@ -211,7 +211,7 @@ export default function SessionSelector({
             >
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center">
-                  <IconComponent name="Scroll" className="mr-2 h-4 w-4" />
+                  <ForwardedIconComponent name="Scroll" className="mr-2 h-4 w-4" />
                   Message logs
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function SessionSelector({
               className="cursor-pointer px-3 py-2 focus:bg-muted"
             >
               <div className="flex items-center text-status-red hover:text-status-red">
-                <IconComponent name="Trash2" className="mr-2 h-4 w-4" />
+                <ForwardedIconComponent name="Trash2" className="mr-2 h-4 w-4" />
                 Delete
               </div>
             </SelectItem>

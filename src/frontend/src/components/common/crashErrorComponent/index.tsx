@@ -1,4 +1,4 @@
-import { XCircle } from "lucide-react";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import { crashComponentPropsType } from "../../../types/components";
 import { Button } from "../../ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "../../ui/card";
@@ -14,7 +14,7 @@ export default function CrashErrorComponent({
           <Card className="p-8">
             <CardHeader>
               <div className="m-auto">
-                <XCircle strokeWidth={1.5} className="h-16 w-16" />
+                <ForwardedIconComponent name="XCircle" strokeWidth={1.5} className="h-16 w-16" />
               </div>
               <div>
                 <p className="mb-4 text-xl text-foreground">

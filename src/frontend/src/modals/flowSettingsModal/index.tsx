@@ -3,7 +3,7 @@ import useAlertStore from "@/stores/alertStore";
 import useFlowStore from "@/stores/flowStore";
 import { cloneDeep } from "lodash";
 import { useEffect, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import EditFlowSettings from "../../components/core/editFlowSettingsComponent";
 import { SETTINGS_DIALOG_SUBTITLE } from "../../constants/constants";
 import useFlowsManagerStore from "../../stores/flowsManagerStore";
@@ -97,7 +97,7 @@ export default function FlowSettingsModal({
     >
       <BaseModal.Header description={SETTINGS_DIALOG_SUBTITLE}>
         <span className="pr-2">Details</span>
-        <IconComponent name="SquarePen" className="mr-2 h-4 w-4" />
+        <ForwardedIconComponent name="SquarePen" className="mr-2 h-4 w-4" />
       </BaseModal.Header>
       <BaseModal.Content>
         <EditFlowSettings

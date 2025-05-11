@@ -5,7 +5,7 @@ import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-twilight";
 // import "ace-builds/webpack-resolver";
 import { useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import { Button } from "../../components/ui/button";
 import BaseModal from "../baseModal";
 import TextEditorArea from "./components/textEditorArea";
@@ -39,7 +39,7 @@ export default function TextModal({
       <BaseModal.Trigger className="h-full">{children}</BaseModal.Trigger>
       <BaseModal.Header description={""}>
         <span className="pr-2">View Text</span>
-        <IconComponent
+        <ForwardedIconComponent
           name="Type"
           className="h-6 w-6 pl-1 text-primary"
           aria-hidden="true"

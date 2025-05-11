@@ -6,10 +6,10 @@ import {
   NumberInputField,
   NumberInputStepper,
 } from "@chakra-ui/number-input";
-import { MinusIcon, PlusIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { handleKeyDown } from "../../../../../utils/reactflowUtils";
 import { FloatComponentType, InputProps } from "../../types";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 
 export default function FloatComponent({
   value,
@@ -107,10 +107,10 @@ export default function FloatComponent({
         />
         <NumberInputStepper className={stepperClassName}>
           <NumberIncrementStepper className={incrementStepperClassName}>
-            <PlusIcon className={iconClassName} />
+            <ForwardedIconComponent name="PlusIcon" className={iconClassName} />
           </NumberIncrementStepper>
           <NumberDecrementStepper className={decrementStepperClassName}>
-            <MinusIcon className={iconClassName} />
+            <ForwardedIconComponent name="MinusIcon" className={iconClassName} />
           </NumberDecrementStepper>
         </NumberInputStepper>
       </NumberInput>

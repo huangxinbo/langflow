@@ -1,5 +1,5 @@
 import { classNames } from "../../../../../utils/utils";
-import IconComponent from "../../../../common/genericIconComponent";
+import ForwardedIconComponent from "../../../../common/genericIconComponent";
 import { Button } from "../../../../ui/button";
 import { InputProps, LinkComponentType } from "../../types";
 
@@ -29,7 +29,7 @@ export default function LinkComponent({
   const ButtonContent = ({ icon, text }: { icon: string; text: string }) => {
     return (
       <div className="flex items-center gap-2">
-        <IconComponent
+        <ForwardedIconComponent
           name={icon ?? DEFAULT_ICON}
           className="h-5 w-5"
           aria-hidden="true"

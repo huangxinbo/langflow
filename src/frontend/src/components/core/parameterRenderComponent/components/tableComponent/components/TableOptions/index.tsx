@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import { TableOptionsTypeAPI } from "@/types/api";
@@ -30,7 +30,7 @@ export default function TableOptions({
           <div>
             <ShadTooltip content={"Add a new row"}>
               <Button data-testid="add-row-button" unstyled onClick={addRow}>
-                <IconComponent
+                <ForwardedIconComponent
                   name="Plus"
                   className={cn("h-5 w-5 text-primary transition-all")}
                 />
@@ -55,7 +55,7 @@ export default function TableOptions({
                 onClick={duplicateRow}
                 disabled={!hasSelection}
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="Copy"
                   className={cn(
                     "h-5 w-5 transition-all",
@@ -85,7 +85,7 @@ export default function TableOptions({
                 onClick={deleteRow}
                 disabled={!hasSelection}
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="Trash2"
                   className={cn(
                     "h-5 w-5 transition-all",
@@ -108,7 +108,7 @@ export default function TableOptions({
               }}
               disabled={!stateChange}
             >
-              <IconComponent
+              <ForwardedIconComponent
                 name="RotateCcw"
                 strokeWidth={2}
                 className={cn(

@@ -1,5 +1,5 @@
 import { OPENAI_VOICES } from "@/constants/constants";
-import IconComponent from "../../../../../../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../../../../../../components/common/genericIconComponent";
 import ShadTooltip from "../../../../../../../../../../components/common/shadTooltipComponent";
 import {
   Select,
@@ -30,7 +30,7 @@ const VoiceSelect = ({
         Voice
         <ShadTooltip content="You can select ElevenLabs voices if you have an ElevenLabs API key. Otherwise, you can only select OpenAI voices.">
           <div>
-            <IconComponent
+            <ForwardedIconComponent
               name="Info"
               strokeWidth={2}
               className="relative -top-[3px] left-1 h-[14px] w-[14px] text-placeholder"

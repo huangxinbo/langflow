@@ -1,9 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Loading from "@/components/ui/loading";
-import React, { useEffect, useRef, useState } from "react";
-import IconComponent from "../../../../../../components/common/genericIconComponent";
-import { ICON_STROKE_WIDTH } from "../../../../../../constants/constants";
-import { cn } from "../../../../../../utils/utils";
+import React from "react";
 
 interface NoInputViewProps {
   isBuilding: boolean;

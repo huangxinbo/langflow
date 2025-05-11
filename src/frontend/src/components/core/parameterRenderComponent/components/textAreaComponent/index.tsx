@@ -3,7 +3,7 @@ import { getCurlWebhookCode } from "@/modals/apiModal/utils/get-curl-code";
 import ComponentTextModal from "@/modals/textAreaModal";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "../../../../../utils/utils";
-import IconComponent from "../../../../common/genericIconComponent";
+import ForwardedIconComponent from "../../../../common/genericIconComponent";
 import { Input } from "../../../../ui/input";
 import { getPlaceholder } from "../../helpers/get-placeholder-disabled";
 import { InputProps, TextAreaComponentType } from "../../types";
@@ -149,7 +149,7 @@ export default function TextAreaComponent({
         />
       )}
 
-      <IconComponent
+      <ForwardedIconComponent
         dataTestId={`button_open_text_area_modal_${id}${editNode ? "_advanced" : ""}`}
         name={getIconName(disabled, "", "", false, isToolMode) || "Scan"}
         className={cn(
@@ -204,7 +204,7 @@ export default function TextAreaComponent({
             setPasswordVisible(!passwordVisible);
           }}
         >
-          <IconComponent
+          <ForwardedIconComponent
             name={passwordVisible ? "eye" : "eye-off"}
             className={cn(
               externalLinkIconClasses.icon,

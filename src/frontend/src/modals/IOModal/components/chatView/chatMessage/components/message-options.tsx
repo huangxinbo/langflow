@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/utils";
@@ -43,7 +43,7 @@ export function EditMessageButton({
               onClick={onEdit}
               className="h-8 w-8"
             >
-              <IconComponent name="Pen" className="h-4 w-4" />
+              <ForwardedIconComponent name="Pen" className="h-4 w-4" />
             </Button>
           </div>
         </ShadTooltip>
@@ -61,7 +61,7 @@ export function EditMessageButton({
             onClick={handleCopy}
             className="h-8 w-8"
           >
-            <IconComponent
+            <ForwardedIconComponent
               name={isCopied ? "Check" : "Copy"}
               className="h-4 w-4"
             />
@@ -80,7 +80,7 @@ export function EditMessageButton({
                 className="h-8 w-8"
                 data-testid="helpful-button"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name={evaluation === true ? "ThumbUpIconCustom" : "ThumbsUp"}
                   className={cn("h-4 w-4")}
                 />
@@ -97,7 +97,7 @@ export function EditMessageButton({
                 className="h-8 w-8"
                 data-testid="not-helpful-button"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name={
                     evaluation === false ? "ThumbDownIconCustom" : "ThumbsDown"
                   }

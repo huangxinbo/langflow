@@ -1,7 +1,5 @@
 //import LangflowLogoColor from "@/assets/LangflowLogocolor.svg?react";
 import ThemeButtons from "@/components/core/appHeaderComponent/components/ThemeButtons";
-import { EventDeliveryType } from "@/constants/enums";
-import { useGetConfig } from "@/controllers/API/queries/config/use-get-config";
 import {
   useDeleteMessages,
   useGetMessagesQuery,
@@ -14,7 +12,7 @@ import { swatchColors } from "@/utils/styleUtils";
 import { useCallback, useEffect, useState } from "react";
 import { v5 as uuidv5 } from "uuid";
 import LangflowLogoColor from "../../assets/LangflowLogoColor.svg?react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import ShadTooltip from "../../components/common/shadTooltipComponent";
 import { Button } from "../../components/ui/button";
 import useAlertStore from "../../stores/alertStore";
@@ -311,7 +309,7 @@ export default function IOModal({
                         swatchColors[swatchIndex],
                       )}
                     >
-                      <IconComponent
+                      <ForwardedIconComponent
                         name={currentFlow?.icon ?? "Workflow"}
                         className="h-3.5 w-3.5"
                       />
@@ -332,7 +330,7 @@ export default function IOModal({
                       className="flex h-8 w-8 items-center justify-center !p-0"
                       onClick={() => setSidebarOpen(!sidebarOpen)}
                     >
-                      <IconComponent
+                      <ForwardedIconComponent
                         name={sidebarOpen ? "PanelLeftClose" : "PanelLeftOpen"}
                         className="h-[18px] w-[18px] text-ring"
                       />

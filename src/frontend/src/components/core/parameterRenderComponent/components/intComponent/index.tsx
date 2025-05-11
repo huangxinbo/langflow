@@ -7,10 +7,10 @@ import {
   NumberInputField,
   NumberInputStepper,
 } from "@chakra-ui/number-input";
-import { MinusIcon, PlusIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { handleKeyDown } from "../../../../../utils/reactflowUtils";
 import { InputProps, IntComponentType } from "../../types";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 
 export default function IntComponent({
   value,
@@ -111,7 +111,8 @@ export default function IntComponent({
             className={incrementStepperClassName}
             _disabled={{ cursor: "default" }}
           >
-            <PlusIcon
+            <ForwardedIconComponent
+              name="PlusIcon"
               className={iconClassName}
               strokeWidth={ICON_STROKE_WIDTH}
             />
@@ -120,7 +121,8 @@ export default function IntComponent({
             className={decrementStepperClassName}
             _disabled={{ cursor: "default" }}
           >
-            <MinusIcon
+            <ForwardedIconComponent
+              name="MinusIcon"
               className={iconClassName}
               strokeWidth={ICON_STROKE_WIDTH}
             />

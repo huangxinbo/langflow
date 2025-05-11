@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import {
   Select,
@@ -47,7 +47,7 @@ export const SelectOptions = ({
             id={`options-trigger-${item.name}`}
             data-testid="more-options-button"
           >
-            <IconComponent
+            <ForwardedIconComponent
               name={"MoreHorizontal"}
               className={cn(
                 `w-4 stroke-[1.5] px-0 text-muted-foreground group-hover/menu-button:block group-hover/menu-button:text-foreground`,

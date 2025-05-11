@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { ICON_STROKE_WIDTH } from "@/constants/constants";
 import { checkLucideIcons } from "@/CustomNodes/helpers/check-lucide-icons";
 import { cn } from "@/utils/utils";
-import IconComponent from "../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../components/common/genericIconComponent";
 
 export function NodeIcon({
   icon,
@@ -65,7 +65,7 @@ export function NodeIcon({
             backgroundImage: hasToolMode ? bgToolMode : "",
           }}
         >
-          <IconComponent
+          <ForwardedIconComponent
             strokeWidth={ICON_STROKE_WIDTH}
             name={iconName}
             className={cn(iconClassName)}
@@ -76,7 +76,7 @@ export function NodeIcon({
 
     return (
       <div className={cn(!showNode && "min-h-8 min-w-8")}>
-        <IconComponent
+        <ForwardedIconComponent
           name={iconName}
           className={iconClassName}
           iconColor={iconColor}

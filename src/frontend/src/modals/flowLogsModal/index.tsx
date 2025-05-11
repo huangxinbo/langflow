@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import PaginatorComponent from "@/components/common/paginatorComponent";
 import TableComponent from "@/components/core/parameterRenderComponent/components/tableComponent";
 import { useGetTransactionsQuery } from "@/controllers/API/queries/transactions";
@@ -61,7 +61,7 @@ export default function FlowLogsModal({
         <div className="flex w-full justify-between">
           <div className="flex h-fit w-32 items-center">
             <span className="pr-2">Logs</span>
-            <IconComponent name="ScrollText" className="mr-2 h-4 w-4" />
+            <ForwardedIconComponent name="ScrollText" className="mr-2 h-4 w-4" />
           </div>
           <div className="flex h-fit w-32 items-center"></div>
         </div>

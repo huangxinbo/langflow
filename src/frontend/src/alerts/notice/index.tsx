@@ -1,9 +1,7 @@
 import { CustomLink } from "@/customization/components/custom-link";
 import { Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import { NoticeAlertType } from "../../types/alerts";
 
 export default function NoticeAlert({
@@ -48,7 +46,7 @@ export default function NoticeAlert({
       >
         <div className="flex">
           <div className="flex-shrink-0 cursor-help">
-            <IconComponent
+            <ForwardedIconComponent
               name="Info"
               className="h-5 w-5 text-status-blue"
               aria-hidden="true"

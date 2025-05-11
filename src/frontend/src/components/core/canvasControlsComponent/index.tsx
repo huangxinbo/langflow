@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import useSaveFlow from "@/hooks/flows/use-save-flow";
 import useFlowsManagerStore from "@/stores/flowsManagerStore";
@@ -45,7 +45,7 @@ export const CustomControlButton = ({
     >
       <ShadTooltip content={tooltipText}>
         <div className={cn("rounded p-2.5", backgroundClasses)}>
-          <IconComponent
+          <ForwardedIconComponent
             name={iconName}
             aria-hidden="true"
             className={cn("scale-150 text-muted-foreground", iconClasses)}

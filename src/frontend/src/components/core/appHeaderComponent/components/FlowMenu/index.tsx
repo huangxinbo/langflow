@@ -6,7 +6,7 @@ import useSaveFlow from "@/hooks/flows/use-save-flow";
 import useUploadFlow from "@/hooks/flows/use-upload-flow";
 import { useHotkeys } from "react-hotkeys-hook";
 
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import {
@@ -290,7 +290,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
         /
       </div>
       <div className={cn(`flex rounded p-1`, swatchColors[swatchIndex])}>
-        <IconComponent
+        <ForwardedIconComponent
           name={currentFlowIcon ?? "Workflow"}
           className="h-3.5 w-3.5"
         />
@@ -348,7 +348,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
               className="group"
               data-testid="flow_menu_trigger"
             >
-              <IconComponent
+              <ForwardedIconComponent
                 name="ChevronDown"
                 className="flex h-5 w-5 text-muted-foreground hover:text-primary"
               />
@@ -363,7 +363,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
                 data-testid="menu_new_flow_button"
                 id="menu_new_flow_button"
               >
-                <IconComponent name="Plus" className="header-menu-options" />
+                <ForwardedIconComponent name="Plus" className="header-menu-options" />
                 New
               </DropdownMenuItem>
 
@@ -375,7 +375,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
                 data-testid="menu_edit_flow_button"
                 id="menu_edit_flow_button"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="SquarePen"
                   className="header-menu-options"
                 />
@@ -408,7 +408,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
                 data-testid="menu_logs_flow_button"
                 id="menu_logs_flow_button"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="ScrollText"
                   className="header-menu-options"
                 />
@@ -433,12 +433,12 @@ export const MenuBar = ({}: {}): JSX.Element => {
                 data-testid="menu_import_flow_button"
                 id="menu_import_flow_button"
               >
-                <IconComponent name="FileUp" className="header-menu-options" />
+                <ForwardedIconComponent name="FileUp" className="header-menu-options" />
                 Import
               </DropdownMenuItem>
               <ExportModal>
                 <div className="header-menubar-item">
-                  <IconComponent
+                  <ForwardedIconComponent
                     name="FileDown"
                     className="header-menu-options"
                   />
@@ -489,7 +489,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
                 data-testid="menu_refresh_flow_button"
                 id="menu_refresh_flow_button"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="RefreshCcw"
                   className="header-menu-options"
                 />
@@ -515,7 +515,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
             onClick={handleSave}
             data-testid="save-flow-button"
           >
-            <IconComponent name={"Save"} className={cn("h-5 w-5")} />
+            <ForwardedIconComponent name="Save" className={cn("h-5 w-5")} />
           </Button>
         )}
         <ShadTooltip
@@ -568,7 +568,7 @@ export const MenuBar = ({}: {}): JSX.Element => {
                   : "hidden"
               }
             >
-              <IconComponent name="Square" className="h-4 w-4" />
+              <ForwardedIconComponent name="Square" className="h-4 w-4" />
               <span>Stop</span>
             </button>
           </div>

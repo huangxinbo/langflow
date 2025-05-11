@@ -1,6 +1,6 @@
 import { Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import { SuccessAlertType } from "../../types/alerts";
 
 export default function SuccessAlert({
@@ -38,7 +38,7 @@ export default function SuccessAlert({
       >
         <div className="flex">
           <div className="flex-shrink-0">
-            <IconComponent
+            <ForwardedIconComponent
               name="CheckCircle2"
               className="success-alert-icon"
               aria-hidden="true"

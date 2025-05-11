@@ -5,7 +5,7 @@ import {
 } from "@/constants/constants";
 import { useEffect, useState } from "react";
 import { PaginatorComponentType } from "../../../types/components";
-import IconComponent from "../../common/genericIconComponent";
+import ForwardedIconComponent from "../../common/genericIconComponent";
 import { Button } from "../../ui/button";
 import {
   Select,
@@ -90,7 +90,7 @@ export default function PaginatorComponent({
             size={"iconMd"}
           >
             <span className="sr-only">Go to previous page</span>
-            <IconComponent name="ChevronLeft" className="h-4 w-4" />
+            <ForwardedIconComponent name="ChevronLeft" className="h-4 w-4" />
           </Button>
           <Button
             disabled={disableLastPage}
@@ -101,7 +101,7 @@ export default function PaginatorComponent({
             size={"iconMd"}
           >
             <span className="sr-only">Go to next page</span>
-            <IconComponent name="ChevronRight" className="h-4 w-4" />
+            <ForwardedIconComponent name="ChevronRight" className="h-4 w-4" />
           </Button>
         </div>
       </div>

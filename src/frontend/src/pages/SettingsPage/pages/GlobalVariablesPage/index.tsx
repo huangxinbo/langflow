@@ -1,6 +1,4 @@
-import IconComponent, {
-  ForwardedIconComponent,
-} from "../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../components/common/genericIconComponent";
 import { Button } from "../../../../components/ui/button";
 
 import Dropdown from "@/components/core/dropdownComponent";
@@ -119,7 +117,7 @@ export default function GlobalVariablesPage() {
         <div className="flex flex-shrink-0 items-center gap-2">
           <GlobalVariableModal asChild>
             <Button data-testid="api-key-button-store" variant="primary">
-              <IconComponent name="Plus" className="w-4" />
+              <ForwardedIconComponent name="Plus" className="w-4" />
               Add New
             </Button>
           </GlobalVariableModal>

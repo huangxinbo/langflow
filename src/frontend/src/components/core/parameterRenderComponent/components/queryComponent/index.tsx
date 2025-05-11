@@ -2,7 +2,7 @@ import { GRADIENT_CLASS } from "@/constants/constants";
 import QueryModal from "@/modals/queryModal";
 import { useRef, useState } from "react";
 import { cn } from "../../../../../utils/utils";
-import IconComponent from "../../../../common/genericIconComponent";
+import ForwardedIconComponent from "../../../../common/genericIconComponent";
 import { Input } from "../../../../ui/input";
 import { getPlaceholder } from "../../helpers/get-placeholder-disabled";
 import { InputProps, QueryComponentType } from "../../types";
@@ -102,7 +102,7 @@ export default function QueryComponent({
         />
       )}
 
-      <IconComponent
+      <ForwardedIconComponent
         dataTestId={`button_open_text_area_modal_${id}${editNode ? "_advanced" : ""}`}
         name={getIconName(disabled, "", "", false, isToolMode) || "Scan"}
         className={cn(

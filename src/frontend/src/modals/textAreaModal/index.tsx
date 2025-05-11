@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import { Button } from "../../components/ui/button";
 import { Textarea } from "../../components/ui/textarea";
 import {
@@ -48,7 +48,7 @@ export default function ComponentTextModal({
       <BaseModal.Header>
         <div className="flex w-full items-start gap-3">
           <div className="flex">
-            <IconComponent
+            <ForwardedIconComponent
               name={"FileText"}
               className="h-6 w-6 pr-1 text-primary"
               aria-hidden="true"
@@ -64,7 +64,7 @@ export default function ComponentTextModal({
                   if (changeVisibility) changeVisibility();
                 }}
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name={password ? "Eye" : "EyeOff"}
                   className="h-6 w-6 cursor-pointer text-primary"
                 />

@@ -1,6 +1,6 @@
 import { usePostValidatePrompt } from "@/controllers/API/queries/nodes/use-post-validate-prompt";
 import React, { useEffect, useRef, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import SanitizedHTMLWrapper from "../../components/common/sanitizedHTMLWrapper";
 import ShadTooltip from "../../components/common/shadTooltipComponent";
 import { Badge } from "../../components/ui/badge";
@@ -219,7 +219,7 @@ export default function PromptModal({
       <BaseModal.Header>
         <div className="flex w-full items-start gap-3">
           <div className="flex">
-            <IconComponent
+            <ForwardedIconComponent
               name="TerminalSquare"
               className="h-6 w-6 pr-1 text-primary"
               aria-hidden="true"
@@ -273,7 +273,7 @@ export default function PromptModal({
                 className="max-h-20 overflow-y-auto custom-scroll"
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <IconComponent
+                  <ForwardedIconComponent
                     name="Braces"
                     className="flex h-4 w-4 text-primary"
                   />

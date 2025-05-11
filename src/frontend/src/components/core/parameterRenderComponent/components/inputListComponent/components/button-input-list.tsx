@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import { ICON_STROKE_WIDTH } from "@/constants/constants";
@@ -43,7 +43,7 @@ export const ButtonInputList = ({
             data-testid={getTestId("plus", index, editNode, componentName)}
             disabled={disabled}
           >
-            <IconComponent
+            <ForwardedIconComponent
               name="Plus"
               className={cn(
                 "icon-size justify-self-center text-muted-foreground",

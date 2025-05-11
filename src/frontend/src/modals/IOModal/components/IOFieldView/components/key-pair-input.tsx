@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { useRef } from "react";
-import IconComponent from "../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../components/common/genericIconComponent";
 import { Input } from "../../../../../components/ui/input";
 import { classNames } from "../../../../../utils/utils";
 
@@ -74,7 +74,7 @@ const IOKeyPairInput = ({
                       onChange(newInputList);
                     }}
                   >
-                    <IconComponent
+                    <ForwardedIconComponent
                       name="Plus"
                       className={"h-4 w-4 hover:text-accent-foreground"}
                     />
@@ -87,7 +87,7 @@ const IOKeyPairInput = ({
                       onChange(newInputList);
                     }}
                   >
-                    <IconComponent
+                    <ForwardedIconComponent
                       name="X"
                       className="h-4 w-4 hover:text-status-red"
                     />

@@ -9,9 +9,7 @@ import { useUtilityStore } from "@/stores/utilityStore";
 import Convert from "ansi-to-html";
 import { useEffect, useRef, useState } from "react";
 import Robot from "../../../../../assets/robot.png";
-import IconComponent, {
-  ForwardedIconComponent,
-} from "../../../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../../../components/common/genericIconComponent";
 import SanitizedHTMLWrapper from "../../../../../components/common/sanitizedHTMLWrapper";
 import { EMPTY_INPUT_SEND_MESSAGE } from "../../../../../constants/constants";
 import useTabVisibility from "../../../../../shared/hooks/use-tab-visibility";
@@ -343,7 +341,7 @@ export default function ChatMessage({
                       onClick={(): void => setHidden((prev) => !prev)}
                       className="form-modal-chat-icon-div"
                     >
-                      <IconComponent
+                      <ForwardedIconComponent
                         name="MessageSquare"
                         className="form-modal-chat-icon"
                       />
@@ -369,7 +367,7 @@ export default function ChatMessage({
                         className="flex w-full flex-col"
                       >
                         {chatMessage === "" && isBuilding && lastMessage ? (
-                          <IconComponent
+                          <ForwardedIconComponent
                             name="MoreHorizontal"
                             className="h-8 w-8 animate-pulse"
                           />

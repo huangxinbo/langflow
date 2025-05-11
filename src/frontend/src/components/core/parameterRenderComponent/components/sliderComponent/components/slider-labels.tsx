@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 
 export const SliderLabels = ({
   minLabel,
@@ -15,7 +15,7 @@ export const SliderLabels = ({
     <>
       <div className="text mt-2 grid grid-cols-2 gap-x-2 text-sm">
         <div className="flex items-center">
-          <IconComponent
+          <ForwardedIconComponent
             className="mr-1 h-4 w-4 text-placeholder-foreground"
             name={minLabelIcon}
             aria-hidden="true"
@@ -34,7 +34,7 @@ export const SliderLabels = ({
           >
             {maxLabel}
           </span>
-          <IconComponent
+          <ForwardedIconComponent
             className="ml-1 h-4 w-4 text-placeholder-foreground"
             name={maxLabelIcon}
             aria-hidden="true"

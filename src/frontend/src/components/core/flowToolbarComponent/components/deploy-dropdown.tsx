@@ -1,4 +1,4 @@
-import IconComponent from "@/components/common/genericIconComponent";
+import ForwardedIconComponent from "@/components/common/genericIconComponent";
 import ShadTooltipComponent from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import {
@@ -89,7 +89,7 @@ export default function PublishDropdown() {
             data-testid="publish-button"
           >
             Publish
-            <IconComponent
+            <ForwardedIconComponent
               name="ChevronDown"
               className="icon-size font-medium"
             />
@@ -110,7 +110,7 @@ export default function PublishDropdown() {
               className="group-hover:bg-accent"
               data-testid="api-access-item"
             >
-              <IconComponent
+              <ForwardedIconComponent
                 name="Code2"
                 className={`${groupStyle} icon-size mr-2`}
               />
@@ -130,12 +130,12 @@ export default function PublishDropdown() {
                 className="group-hover:bg-accent"
                 data-testid="mcp-server-item"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="Mcp"
                   className={`${groupStyle} icon-size mr-2 fill-muted-foreground group-hover:fill-foreground`}
                 />
                 <span>MCP Server</span>
-                <IconComponent
+                <ForwardedIconComponent
                   name="ExternalLink"
                   className={`${groupStyle} icon-size ml-auto hidden group-hover:block`}
                 />
@@ -148,7 +148,7 @@ export default function PublishDropdown() {
               className="deploy-dropdown-item group"
             >
               <div className="group-hover:bg-accent">
-                <IconComponent
+                <ForwardedIconComponent
                   name="Columns2"
                   className={`${groupStyle} icon-size mr-2`}
                 />
@@ -192,7 +192,7 @@ export default function PublishDropdown() {
                     onClick={() => {}}
                   >
                     <div className="group-hover:bg-accent">
-                      <IconComponent
+                      <ForwardedIconComponent
                         name="Globe"
                         className={`${groupStyle} icon-size mr-2`}
                       />

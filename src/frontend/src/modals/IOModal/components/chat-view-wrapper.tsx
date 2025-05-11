@@ -2,7 +2,7 @@ import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/utils/utils";
-import IconComponent from "../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../components/common/genericIconComponent";
 import { ChatViewWrapperProps } from "../types/chat-view-wrapper";
 import ChatView from "./chatView/components/chat-view";
 
@@ -45,7 +45,7 @@ export const ChatViewWrapper = ({
               onClick={() => setSidebarOpen(true)}
               className="h-8 w-8"
             >
-              <IconComponent
+              <ForwardedIconComponent
                 name="PanelLeftOpen"
                 className="h-[18px] w-[18px] text-ring"
               />
@@ -82,7 +82,7 @@ export const ChatViewWrapper = ({
                 setSelectedViewField(undefined);
               }}
             >
-              <IconComponent
+              <ForwardedIconComponent
                 name="Plus"
                 className="!h-[18px] !w-[18px] text-ring"
               />

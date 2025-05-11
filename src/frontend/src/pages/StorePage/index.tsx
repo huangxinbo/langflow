@@ -1,6 +1,6 @@
 import { uniqueId } from "lodash";
 import { useContext, useEffect, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import PageLayout from "../../components/common/pageLayout";
 import ShadTooltip from "../../components/common/shadTooltipComponent";
 import { SkeletonCardComponent } from "../../components/common/skeletonCardComponent";
@@ -180,7 +180,7 @@ export default function StorePage(): JSX.Element {
             navigate("/settings/general/api");
           }}
         >
-          <IconComponent name="Key" className="mr-2 w-4" />
+          <ForwardedIconComponent name="Key" className="mr-2 w-4" />
           API Key
         </Button>
       }
@@ -301,7 +301,7 @@ export default function StorePage(): JSX.Element {
                 className="gap-2 bg-beta-foreground text-background hover:bg-beta-foreground"
               >
                 <CustomLink to={"/store"} className="cursor-pointer">
-                  <IconComponent name="X" className="h-4 w-4" />
+                  <ForwardedIconComponent name="X" className="h-4 w-4" />
                 </CustomLink>
                 {id}
               </Badge>

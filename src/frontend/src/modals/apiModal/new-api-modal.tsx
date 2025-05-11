@@ -9,7 +9,7 @@ import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-twilight";
 import { ReactNode, useEffect, useState } from "react";
-import IconComponent from "../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import { useTweaksStore } from "../../stores/tweaksStore";
 import BaseModal from "../baseModal";
 import APITabsComponent from "./codeTabs/code-tabs";
@@ -66,7 +66,7 @@ export default function ApiModal({
             )
           }
         >
-          <IconComponent
+          <ForwardedIconComponent
             name="Code2"
             className="h-6 w-6 text-gray-800 dark:text-white"
             aria-hidden="true"
@@ -81,7 +81,7 @@ export default function ApiModal({
                 onClick={() => setOpenTweaks(true)}
                 data-testid="tweaks-button"
               >
-                <IconComponent
+                <ForwardedIconComponent
                   name="SlidersHorizontal"
                   className="h-3.5 w-3.5"
                 />
@@ -125,7 +125,7 @@ export default function ApiModal({
             )
           }
         >
-          <IconComponent
+          <ForwardedIconComponent
             name="SlidersHorizontal"
             className="h-6 w-6 text-gray-800 dark:text-white"
           />

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import IconComponent from "../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../components/common/genericIconComponent";
 
 export const ContentRenderKey = ({
   inputLabel,
@@ -44,9 +44,9 @@ export const ContentRenderKey = ({
           unstyled
         >
           {textCopied ? (
-            <IconComponent name="Copy" className="h-4 w-4" />
+            <ForwardedIconComponent name="Copy" className="h-4 w-4" />
           ) : (
-            <IconComponent name="Check" className="h-4 w-4" />
+            <ForwardedIconComponent name="Check" className="h-4 w-4" />
           )}
         </Button>
       </div>

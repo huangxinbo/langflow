@@ -1,6 +1,6 @@
 import { InputOutput } from "@/constants/enums";
 import { cn } from "@/utils/utils";
-import IconComponent from "../../../components/common/genericIconComponent";
+import ForwardedIconComponent from "../../../components/common/genericIconComponent";
 import { SelectedViewFieldProps } from "../types/selected-view-field";
 import IOFieldView from "./IOFieldView/io-field-view";
 import SessionView from "./session-view";
@@ -26,10 +26,10 @@ export const SelectedViewField = ({
         <div className="font-xl flex items-center justify-center gap-3 font-semibold">
           {haveChat && (
             <button onClick={() => setSelectedViewField(undefined)}>
-              <IconComponent
+              <ForwardedIconComponent
                 name={"ArrowLeft"}
                 className="h-6 w-6"
-              ></IconComponent>
+              />
             </button>
           )}
           {

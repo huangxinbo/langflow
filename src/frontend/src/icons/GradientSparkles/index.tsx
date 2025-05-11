@@ -1,4 +1,3 @@
-import { Code } from "lucide-react";
 import { forwardRef } from "react";
 import ForwardedIconComponent from "../../components/common/genericIconComponent";
 
@@ -16,7 +15,7 @@ export const GradientInfinity = forwardRef<
           </linearGradient>
         </defs>
       </svg>
-      <Code stroke="url(#grad1)" ref={ref} {...props} />
+      <ForwardedIconComponent name="Code" stroke="url(#grad1)" ref={ref} {...props} />
     </>
   );
 });

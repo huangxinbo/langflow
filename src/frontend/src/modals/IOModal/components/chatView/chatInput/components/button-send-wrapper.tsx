@@ -67,7 +67,7 @@ const ButtonSendWrapper = ({
       </Case>
 
       {/* <Case condition={showPlayButton}>
-        <IconComponent
+        <ForwardedIconComponent
           name="Zap"
           className="form-modal-play-icon"
           aria-hidden="true"

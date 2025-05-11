@@ -7,7 +7,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/utils/utils";
-import { ChevronsUpDown } from "lucide-react";
 import React from "react";
 
 export const HeaderMenu = ({ children }) => (
@@ -23,7 +22,7 @@ export const HeaderMenuToggle = ({ children }) => (
     <div className="group flex items-center self-center rounded-md">
       <div className="flex h-6 w-10 items-center justify-center rounded-full bg-background transition-colors hover:bg-muted group-hover:bg-muted">
         <div className="relative right-1 z-10">{children}</div>
-        <ChevronsUpDown className="relative h-[14px] w-[14px] text-muted-foreground group-hover:text-primary" />
+        <ForwardedIconComponent name="ChevronsUpDown" className="relative h-[14px] w-[14px] text-muted-foreground group-hover:text-primary" />
       </div>
     </div>
   </DropdownMenuTrigger>
