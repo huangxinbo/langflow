@@ -24,7 +24,7 @@ export default function FetchErrorComponent({
             <IconComponent
               className={`h-16 w-16`}
               name="Unplug"
-            ></IconComponent>
+            />
             <br></br>
             <span className="text-lg text-primary">{message}</span>
             <span className="text-lg text-primary">{description}</span>

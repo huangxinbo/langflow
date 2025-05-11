@@ -1,23 +1,12 @@
-import { ForwardedIconComponent } from "@/components/common/genericIconComponent";
-import {
-  DATASTAX_DOCS_URL,
-  DISCORD_URL,
-  DOCS_URL,
-  GITHUB_URL,
-  TWITTER_URL,
-} from "@/constants/constants";
 import { useLogout } from "@/controllers/API/queries/auth";
-import { ENABLE_DATASTAX_LANGFLOW } from "@/customization/feature-flags";
 import { useCustomNavigate } from "@/customization/hooks/use-custom-navigate";
 import useAuthStore from "@/stores/authStore";
 import { useDarkStore } from "@/stores/darkStore";
 import { cn } from "@/utils/utils";
-import { FaDiscord, FaGithub, FaTwitter } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import {
   HeaderMenu,
   HeaderMenuItemButton,
-  HeaderMenuItemLink,
   HeaderMenuItems,
   HeaderMenuToggle,
 } from "../HeaderMenu";
@@ -25,7 +14,6 @@ import { ProfileIcon } from "../ProfileIcon";
 import ThemeButtons from "../ThemeButtons";
 
 export const AccountMenu = () => {
-  const { customParam: id } = useParams();
   const version = useDarkStore((state) => state.version);
   const latestVersion = useDarkStore((state) => state.latestVersion);
   const navigate = useCustomNavigate();
