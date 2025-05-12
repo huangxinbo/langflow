@@ -16,7 +16,11 @@ export default function App() {
   }, [dark]);
   return (
     <Suspense fallback={<LoadingPage />}>
-      <RouterProvider router={router} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }} />
     </Suspense>
   );
 }

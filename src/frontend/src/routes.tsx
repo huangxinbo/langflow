@@ -203,7 +203,12 @@ const router = createBrowserRouter(
       <Route path="*" element={<CustomNavigate replace to="/" />} />
     </Route>,
   ]),
-  { basename: BASENAME || undefined },
+  { 
+    basename: BASENAME || undefined,
+    future: {
+      v7_relativeSplatPath: true
+    }
+   },
 );
 
 export default router;
