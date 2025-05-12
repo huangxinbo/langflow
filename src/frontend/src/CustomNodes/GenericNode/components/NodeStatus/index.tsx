@@ -2,8 +2,7 @@ import ShadTooltip from "@/components/common/shadTooltipComponent";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ICON_STROKE_WIDTH } from "@/constants/constants";
-import { BuildStatus, EventDeliveryType } from "@/constants/enums";
-import { useGetConfig } from "@/controllers/API/queries/config/use-get-config";
+import { BuildStatus } from "@/constants/enums";
 import { usePostTemplateValue } from "@/controllers/API/queries/nodes/use-post-template-value";
 import { track } from "@/customization/utils/analytics";
 import { getSpecificClassFromBuildStatus } from "@/CustomNodes/helpers/get-class-from-build-status";
@@ -38,10 +37,11 @@ export default function NodeStatus({
   showNode,
   data,
   buildStatus,
+  dismissAll,
   isOutdated,
   isUserEdited,
+  isBreakingChange,
   getValidationStatus,
-  handleUpdateComponent,
 }: {
   nodeId: string;
   display_name: string;
@@ -51,10 +51,11 @@ export default function NodeStatus({
   showNode: boolean;
   data: NodeDataType;
   buildStatus: BuildStatus;
+  dismissAll: boolean;
   isOutdated: boolean;
   isUserEdited: boolean;
+  isBreakingChange: boolean;
   getValidationStatus: (data) => VertexBuildTypeAPI | null;
-  handleUpdateComponent: () => void;
 }) {
   const nodeId_ = data.node?.flow?.data
     ? (findLastNode(data.node?.flow.data!)?.id ?? nodeId)
@@ -181,8 +182,6 @@ export default function NodeStatus({
     getValidationStatus,
   );
 
-  const dismissAll = useUtilityStore((state) => state.dismissAll);
-
   const getBaseBorderClass = (selected) => {
     let className =
       selected && !isBuilding
@@ -190,8 +189,8 @@ export default function NodeStatus({
         : "border ring-[0.5px] hover:shadow-node ring-border";
     let frozenClass = selected ? "border-ring-frozen" : "border-frozen";
     let updateClass =
-      isOutdated && !isUserEdited && !dismissAll
-        ? "border-warning ring-2 ring-warning"
+      isOutdated && !isUserEdited && !dismissAll && isBreakingChange
+        ? "border-warning"
         : "";
     return cn(frozen ? frozenClass : className, updateClass);
   };
@@ -427,7 +426,7 @@ export default function NodeStatus({
                   </div>
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <ForwardedIconComponent
-                      name={"Unlink"}
+                      name="Unlink"
                       className={cn(
                         "h-3 w-3 text-accent-amber-foreground opacity-0 transition-opacity",
                         isAuthenticated && !isPolling
@@ -463,36 +462,6 @@ export default function NodeStatus({
             )}
           </div>
         </ShadTooltip>
-        {dismissAll && isOutdated && !isUserEdited && (
-          <ShadTooltip content="Update component">
-            <div
-              className="button-run-bg hit-area-icon ml-1 bg-warning hover:bg-warning/80"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleUpdateComponent();
-                e.stopPropagation();
-              }}
-            >
-              {showNode && (
-                <Button
-                  unstyled
-                  type="button"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <div
-                    data-testid={`button_update_` + display_name.toLowerCase()}
-                  >
-                    <ForwardedIconComponent
-                      name={"AlertTriangle"}
-                      strokeWidth={ICON_STROKE_WIDTH}
-                      className="icon-size text-black"
-                    />
-                  </div>
-                </Button>
-              )}
-            </div>
-          </ShadTooltip>
-        )}
       </div>
     </>
   ) : (
