@@ -33,8 +33,9 @@ export function AppInitPage() {
 
   useEffect(() => {
     if (isFetched) {
-      refreshStars();
-      refreshDiscordCount();
+      // refreshStars();
+      // refreshDiscordCount();
+      console.log("dont request discord and github")
     }
 
     if (isConfigFetched) {
