@@ -133,7 +133,7 @@ const HeaderComponent = ({
                   value={debouncedSearch}
                   onChange={handleSearch}
                 />
-                <div className="relative top-[3px] mr-2 flex h-fit rounded-lg border border-muted bg-muted">
+                <div className="relative mr-2 flex h-fit rounded-lg border border-muted bg-muted">
                   {/* Sliding Indicator */}
                   <div
                     className={`absolute top-[3px] h-[33px] w-8 transform rounded-lg bg-background shadow-md transition-transform duration-300 ${
