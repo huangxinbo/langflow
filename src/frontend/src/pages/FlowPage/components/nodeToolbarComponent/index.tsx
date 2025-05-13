@@ -482,18 +482,17 @@ const NodeToolbarComponent = memo(
               }
               side="top"
             >
-              <Button
+              <div
                 className={cn(
-                  "node-toolbar-buttons h-[2rem]",
+                  "node-toolbar-buttons h-[2rem] px-1",
                   toolMode && "text-primary",
+                  "hover:bg-white/10"
                 )}
-                variant="ghost"
                 onClick={(event) => {
                   event.preventDefault();
                   takeSnapshot();
                   handleSelectChange("toolMode");
                 }}
-                size="node-toolbar"
                 data-testid="tool-mode-button"
               >
                 <ForwardedIconComponent
@@ -516,7 +515,7 @@ const NodeToolbarComponent = memo(
                   showToogle={false}
                   id="tool-mode-toggle"
                 />
-              </Button>
+              </div>
             </ShadTooltip>
           )}
         </>
