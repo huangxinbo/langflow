@@ -27,7 +27,7 @@ export default function FlowLogsModal({
       size: pageSize,
     },
     mode: "union",
-  });
+  }, { enabled: !!currentFlowId});
 
   useEffect(() => {
     if (data) {
@@ -45,10 +45,10 @@ export default function FlowLogsModal({
   }, [data]);
 
   useEffect(() => {
-    if (open) {
+    if (open && currentFlowId) {
       refetch();
     }
-  }, [open]);
+  }, [open, currentFlowId]);
 
   const handlePageChange = useCallback((newPageIndex, newPageSize) => {
     setPageIndex(newPageIndex);
