@@ -4,7 +4,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useAuthStore from "@/stores/authStore";
 import useFlowStore from "@/stores/flowStore";
 import { useTweaksStore } from "@/stores/tweaksStore";
-import { AllNodeType } from "@/types/flow";
 import { tabsArrayType } from "@/types/tabs";
 import { hasStreaming } from "@/utils/reactflowUtils";
 import { useEffect, useState } from "react";
@@ -13,6 +12,7 @@ import {
   oneDark,
   oneLight,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { useShallow } from "zustand/react/shallow";
 import { useDarkStore } from "../../../stores/darkStore";
 import { getNewCurlCode } from "../utils/get-curl-code";
 import { getNewJsApiCode } from "../utils/get-js-api-code";
@@ -20,6 +20,9 @@ import { getNewPythonApiCode } from "../utils/get-python-api-code";
 
 export default function APITabsComponent() {
   const [isCopied, setIsCopied] = useState<Boolean>(false);
+  const endpointName = useFlowStore(
+    useShallow((state) => state.currentFlow?.endpoint_name),
+  );
   const dark = useDarkStore((state) => state.dark);
   const nodes = useFlowStore((state) => state.nodes);
   const flowId = useFlowStore((state) => state.currentFlow?.id);
@@ -39,6 +42,7 @@ export default function APITabsComponent() {
   const streaming = hasStreaming(nodes);
   const tweaks = useTweaksStore((state) => state.tweaks);
   const codeOptions = {
+    endpointName: endpointName || "",
     streaming: streaming,
     flowId: flowId || "",
     isAuthenticated: !autologin || false,
