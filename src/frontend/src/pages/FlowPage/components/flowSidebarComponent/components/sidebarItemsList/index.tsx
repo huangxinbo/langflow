@@ -42,6 +42,7 @@ const SidebarItemsList = ({
           if (SBItemName === "ChatInput" || SBItemName === "Webhook") {
             return (
               <UniqueInputsDraggableComponent
+                key={SBItemName}
                 item={item}
                 currentItem={currentItem}
                 SBItemName={SBItemName}
