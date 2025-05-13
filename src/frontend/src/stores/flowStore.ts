@@ -57,6 +57,7 @@ import { useDarkStore } from "./darkStore";
 import useFlowsManagerStore from "./flowsManagerStore";
 import { useGlobalVariablesStore } from "./globalVariablesStore/globalVariables";
 import { useTypesStore } from "./typesStore";
+import { debounce } from 'lodash';
 
 // this is our useStore hook that we can use in our components to get parts of the store and call actions
 const useFlowStore = create<FlowStoreType>((set, get) => ({
@@ -257,11 +258,10 @@ const useFlowStore = create<FlowStoreType>((set, get) => ({
   setReactFlowInstance: (newState) => {
     set({ reactFlowInstance: newState });
   },
-  onNodesChange: (changes: NodeChange<AllNodeType>[]) => {
-    set({
-      nodes: applyNodeChanges(changes, get().nodes),
-    });
-  },
+  onNodesChange: debounce((changes: NodeChange<AllNodeType>[]) => {
+    const newNodes = applyNodeChanges(changes, get().nodes);
+    set({ nodes: newNodes });
+  }, 1),
   onEdgesChange: (changes: EdgeChange<EdgeType>[]) => {
     set({
       edges: applyEdgeChanges(changes, get().edges),

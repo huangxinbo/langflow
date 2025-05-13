@@ -486,7 +486,7 @@ const NodeToolbarComponent = memo(
                 className={cn(
                   "node-toolbar-buttons h-[2rem] px-1",
                   toolMode && "text-primary",
-                  "hover:bg-white/10"
+                  "hover:bg-white/10 hover:cursor-pointer"
                 )}
                 onClick={(event) => {
                   event.preventDefault();
