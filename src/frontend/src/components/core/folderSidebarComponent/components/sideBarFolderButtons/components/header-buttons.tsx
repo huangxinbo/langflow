@@ -1,5 +1,6 @@
-import ForwardedIconComponent from "@/components/common/genericIconComponent";
+import IconComponent from "@/components/common/genericIconComponent";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import useAuthStore from "@/stores/authStore";
 import { AddFolderButton } from "./add-folder-button";
 import { UploadFolderButton } from "./upload-folder-button";
 
@@ -14,15 +15,16 @@ export const HeaderButtons = ({
   isPending: boolean;
   addNewFolder: () => void;
 }) => {
+  const userData = useAuthStore((state) => state.userData);
 
   return (
     <>
       <div className="flex shrink-0 items-center justify-between gap-2 pt-2">
         <SidebarTrigger className="lg:hidden">
-          <ForwardedIconComponent name="PanelLeftClose" className="h-4 w-4" />
+          <IconComponent name="PanelLeftClose" className="h-4 w-4" />
         </SidebarTrigger>
 
-        <div className="flex-1 text-sm font-semibold">Projects</div>
+        <div className="flex-1 text-sm font-medium">Projects</div>
         <div className="flex items-center gap-1">
           <UploadFolderButton
             onClick={handleUploadFlowsToFolder}

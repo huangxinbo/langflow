@@ -253,7 +253,7 @@ export default function ChatMessage({
                     <ForwardedIconComponent name={chat.properties.icon} />
                   )
                 ) : !ENABLE_DATASTAX_LANGFLOW && !playgroundPage ? (
-                  <ProfileIcon />
+                  <CustomProfileIcon />
                 ) : playgroundPage ? (
                   <ForwardedIconComponent name="User" />
                 ) : (
