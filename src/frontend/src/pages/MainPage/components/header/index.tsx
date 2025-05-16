@@ -211,6 +211,7 @@ const HeaderComponent = ({
                       (selectedFlows.length > 1 ? "their" : "its") +
                       " message history"
                     }
+                    asChild={true}
                   >
                     <Button
                       variant="destructive"

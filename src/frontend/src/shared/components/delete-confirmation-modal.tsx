@@ -57,7 +57,7 @@ const GeneralDeleteConfirmationModal = ({
         description={'variable "' + option + '"'}
         asChild
       >
-        <button
+        <div
           onClick={(e) => {
             e.stopPropagation();
           }}
@@ -70,7 +70,7 @@ const GeneralDeleteConfirmationModal = ({
             )}
             aria-hidden="true"
           />
-        </button>
+        </div>
       </DeleteConfirmationModal>
     </>
   );
