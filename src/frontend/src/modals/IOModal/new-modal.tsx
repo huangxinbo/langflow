@@ -12,6 +12,7 @@ import { useUtilityStore } from "@/stores/utilityStore";
 import { swatchColors } from "@/utils/styleUtils";
 import { useCallback, useEffect, useState } from "react";
 import { v5 as uuidv5 } from "uuid";
+import { useShallow } from "zustand/react/shallow";
 import LangflowLogoColor from "../../assets/LangflowLogoColor.svg?react";
 import ForwardedIconComponent from "../../components/common/genericIconComponent";
 import ShadTooltip from "../../components/common/shadTooltipComponent";
@@ -26,6 +27,7 @@ import BaseModal from "../baseModal";
 import { ChatViewWrapper } from "./components/chat-view-wrapper";
 import { SelectedViewField } from "./components/selected-view-field";
 import { SidebarOpenView } from "./components/sidebar-open-view";
+
 export default function IOModal({
   children,
   open,
@@ -35,29 +37,33 @@ export default function IOModal({
   canvasOpen,
   playgroundPage,
 }: IOModalPropsType): JSX.Element {
-  const allNodes = useFlowStore((state) => state.nodes);
   const setIOModalOpen = useFlowsManagerStore((state) => state.setIOModalOpen);
-  const inputs = useFlowStore((state) => state.inputs).filter(
-    (input) => input.type !== "ChatInput",
+  const inputs = useFlowStore((state) => state.inputs);
+  const outputs = useFlowStore((state) => state.outputs);
+  const nodes = useFlowStore((state) => state.nodes);
+  const buildFlow = useFlowStore((state) => state.buildFlow);
+  const setIsBuilding = useFlowStore((state) => state.setIsBuilding);
+  const isBuilding = useFlowStore((state) => state.isBuilding);
+  const { flowIcon, flowId, flowGradient, flowName } = useFlowStore(
+    useShallow((state) => ({
+      flowIcon: state.currentFlow?.icon,
+      flowId: state.currentFlow?.id,
+      flowGradient: state.currentFlow?.gradient,
+      flowName: state.currentFlow?.name,
+    })),
   );
-  const chatInput = useFlowStore((state) => state.inputs).find(
-    (input) => input.type === "ChatInput",
-  );
-  const outputs = useFlowStore((state) => state.outputs).filter(
+  const filteredInputs = inputs.filter((input) => input.type !== "ChatInput");
+  const chatInput = inputs.find((input) => input.type === "ChatInput");
+  const filteredOutputs = outputs.filter(
     (output) => output.type !== "ChatOutput",
   );
-  const chatOutput = useFlowStore((state) => state.outputs).find(
-    (output) => output.type === "ChatOutput",
-  );
-  const nodes = useFlowStore((state) => state.nodes).filter(
+  const chatOutput = outputs.find((output) => output.type === "ChatOutput");
+  const filteredNodes = nodes.filter(
     (node) =>
       inputs.some((input) => input.id === node.id) ||
-      outputs.some((output) => output.id === node.id),
+      filteredOutputs.some((output) => output.id === node.id),
   );
   const haveChat = chatInput || chatOutput;
-  const [selectedTab, setSelectedTab] = useState(
-    inputs.length > 0 ? 1 : outputs.length > 0 ? 2 : 0,
-  );
   const setErrorData = useAlertStore((state) => state.setErrorData);
   const setSuccessData = useAlertStore((state) => state.setSuccessData);
   const deleteSession = useMessagesStore((state) => state.deleteSession);
@@ -66,14 +72,12 @@ export default function IOModal({
   const currentFlowId = playgroundPage
     ? uuidv5(`${clientId}_${realFlowId}`, uuidv5.DNS)
     : realFlowId;
-  const currentFlow = useFlowStore((state) => state.currentFlow);
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const { mutate: deleteSessionFunction } = useDeleteMessages();
   const [visibleSession, setvisibleSession] = useState<string | undefined>(
     currentFlowId,
   );
-  const flowName = useFlowStore((state) => state.currentFlow?.name);
   const PlaygroundTitle = playgroundPage && flowName ? flowName : "Playground";
 
   useEffect(() => {
@@ -111,10 +115,10 @@ export default function IOModal({
 
   function startView() {
     if (!chatInput && !chatOutput) {
-      if (inputs.length > 0) {
-        return inputs[0];
+      if (filteredInputs.length > 0) {
+        return filteredInputs[0];
       } else {
-        return outputs[0];
+        return filteredOutputs[0];
       }
     } else {
       return undefined;
@@ -125,10 +129,6 @@ export default function IOModal({
     { type: string; id: string } | undefined
   >(startView());
 
-  const buildFlow = useFlowStore((state) => state.buildFlow);
-  const setIsBuilding = useFlowStore((state) => state.setIsBuilding);
-
-  const isBuilding = useFlowStore((state) => state.isBuilding);
   const messages = useMessagesStore((state) => state.messages);
   const [sessions, setSessions] = useState<string[]>(
     Array.from(
@@ -181,10 +181,6 @@ export default function IOModal({
     },
     [isBuilding, setIsBuilding, chatValue, chatInput?.id, sessionId, buildFlow],
   );
-
-  useEffect(() => {
-    setSelectedTab(inputs.length > 0 ? 1 : outputs.length > 0 ? 2 : 0);
-  }, [allNodes.length]);
 
   useEffect(() => {
     const sessions = new Set<string>();
@@ -268,9 +264,9 @@ export default function IOModal({
   }, [playgroundPage, messages]);
 
   const swatchIndex =
-    (currentFlow?.gradient && !isNaN(parseInt(currentFlow?.gradient))
-      ? parseInt(currentFlow?.gradient)
-      : getNumberFromString(currentFlow?.gradient ?? currentFlow?.id ?? "")) %
+    (flowGradient && !isNaN(parseInt(flowGradient))
+      ? parseInt(flowGradient)
+      : getNumberFromString(flowGradient ?? flowId ?? "")) %
     swatchColors.length;
 
   return (
@@ -311,7 +307,7 @@ export default function IOModal({
                       )}
                     >
                       <ForwardedIconComponent
-                        name={currentFlow?.icon ?? "Workflow"}
+                        name={flowIcon ?? "Workflow"}
                         className="h-3.5 w-3.5"
                       />
                     </div>
@@ -382,11 +378,11 @@ export default function IOModal({
                   selectedViewField={selectedViewField}
                   setSelectedViewField={setSelectedViewField}
                   haveChat={haveChat}
-                  inputs={inputs}
-                  outputs={outputs}
+                  inputs={filteredInputs}
+                  outputs={filteredOutputs}
                   sessions={sessions}
                   currentFlowId={currentFlowId}
-                  nodes={nodes}
+                  nodes={filteredNodes}
                 />
               )}
               <ChatViewWrapper
