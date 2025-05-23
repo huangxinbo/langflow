@@ -278,12 +278,14 @@ class Message(Data):
 
 
 class DefaultModel(BaseModel):
-    class Config:
-        from_attributes = True
-        populate_by_name = True
+    model_config = ConfigDict(
+        from_attributes = True,
+        populate_by_name = True,
         json_encoders = {
             datetime: lambda v: v.isoformat(),
-        }
+        },
+    )
+    
 
     def json(self, **kwargs):
         # Usa a função de serialização personalizada

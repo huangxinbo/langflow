@@ -11,6 +11,7 @@ from langflow.inputs import MessageTextInput
 from langflow.io import SecretStrInput
 from langflow.schema import Data
 from langflow.template import Output
+from pydantic import ConfigDict
 
 
 class GoogleDriveComponent(Component):
@@ -47,8 +48,7 @@ class GoogleDriveComponent(Component):
                 msg = "No credentials provided."
                 raise ValueError(msg)
 
-            class Config:
-                arbitrary_types_allowed = True
+            model_config = ConfigDict(arbitrary_types_allowed=True)
 
         json_string = self.json_string
 

@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 from uuid import UUID, uuid4
 
-from pydantic import field_serializer, field_validator
+from pydantic import field_serializer, field_validator, ConfigDict
 from sqlmodel import JSON, Column, Field, SQLModel
 
 from langflow.serialization.constants import MAX_ITEMS_LENGTH, MAX_TEXT_LENGTH
@@ -19,8 +19,7 @@ class TransactionBase(SQLModel):
     flow_id: UUID = Field()
 
     # Needed for Column(JSON)
-    class Config:
-        arbitrary_types_allowed = True
+    model_config = ConfigDict(arbitrary_types_allowed=True)
 
     @field_validator("flow_id", mode="before")
     @classmethod

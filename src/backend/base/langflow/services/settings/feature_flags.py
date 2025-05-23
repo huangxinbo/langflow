@@ -1,11 +1,9 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class FeatureFlags(BaseSettings):
     mvp_components: bool = False
-
-    class Config:
-        env_prefix = "LANGFLOW_FEATURE_"
+    model_config = SettingsConfigDict(env_prefix="LANGFLOW_FEATURE_")
 
 
 FEATURE_FLAGS = FeatureFlags()
